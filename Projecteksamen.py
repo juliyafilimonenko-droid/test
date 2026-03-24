@@ -45,7 +45,6 @@ class GameView(arcade.View):
         # --- SPRITES ---
         self.ship_sprite_list = arcade.SpriteList()
         self.ship_sprite_list.append(self.ship)
-        self.ship_sprite_list.append(self.barrel)
 
         # --- TEXT ---
         self.control_text = arcade.Text(
@@ -77,20 +76,7 @@ class GameView(arcade.View):
         self.ship.center_x += x_dir
         self.ship.center_y += y_dir
 
-        # Move barrel with ship
-        self.barrel.center_x += x_dir
-        self.barrel.center_y += y_dir
-
-        # --- AIM BARREL ---
-        mouse_angle = get_angle_degrees(
-            self.ship.center_x, self.ship.center_y,
-            self.mouse_pos[0], self.mouse_pos[1]
-        )
-
-        mouse_angle -= 90
-        angle_change = mouse_angle - self.barrel.angle
-
-        self.barrel.rotate_around_point(self.ship.position, angle_change)
+        
 
     def on_key_press(self, symbol: int, modifiers: int):
         if symbol == arcade.key.W:
