@@ -31,10 +31,10 @@ class GameView(arcade.View):
     def __init__(self):
         super().__init__()
 
-        self.window.background_color = arcade.csscolor.SEA_GREEN
+        self.background = arcade.load_texture("Resorces/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg")
 
         # --- SHIP BODY ---
-        self.ship = arcade.Sprite("Resorces/Ship.png", scale=0.5)
+        self.ship = arcade.Sprite("Resorces/Ship.png", scale=0.05)
         self.ship.position = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
 
         # --- MOVEMENT ---
@@ -80,23 +80,23 @@ class GameView(arcade.View):
 
     def on_key_press(self, symbol: int, modifiers: int):
         if symbol == arcade.key.W:
-            self.ship_direction += 1
+            self.ship_direction += 2
         elif symbol == arcade.key.S:
-            self.ship_direction -= 1
+            self.ship_direction -= 2
         elif symbol == arcade.key.A:
-            self.ship_turning -= 1
+            self.ship_turning -= 2
         elif symbol == arcade.key.D:
-            self.ship_turning += 1
+            self.ship_turning += 2
 
     def on_key_release(self, symbol: int, modifiers: int):
         if symbol == arcade.key.W:
-            self.ship_direction -= 1
+            self.ship_direction -= 2
         elif symbol == arcade.key.S:
-            self.ship_direction += 1
+            self.ship_direction += 2
         elif symbol == arcade.key.A:
-            self.ship_turning += 1
+            self.ship_turning += 2
         elif symbol == arcade.key.D:
-            self.ship_turning -= 1
+            self.ship_turning -= 2
 
     def on_mouse_motion(self, x: int, y: int, dx: int, dy: int):
         self.mouse_pos = (x, y)
