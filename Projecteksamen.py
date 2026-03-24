@@ -4,3 +4,5 @@ arcade.set_background_color(arcade.color.DARK_BLUE_GRAY)
 arcade.start_render()
 arcade.finish_render()
 arcade.run()
+
+arcade.load_texture("/home/kali/test-1/Resorces/Ship.png")
