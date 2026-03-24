@@ -5,4 +5,4 @@ arcade.start_render()
 arcade.finish_render()
 arcade.run()
 
-arcade.load_texture("/home/kali/test-1/Resorces/Ship.png")
+arcade.load_texture("Resorces/Ship.png")
