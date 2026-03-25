@@ -31,7 +31,10 @@ class GameView(arcade.View):
     def __init__(self):
         super().__init__()
 
+        # --- BACKGROUND ---
+        self.background = None
         self.background = arcade.load_texture("Resorces/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg")
+        self.background_size = arcade.XYWH(600, 400, 1200, 800)
 
         # --- SHIP BODY ---
         self.ship = arcade.Sprite("Resorces/Ship.png", scale=0.05)
@@ -55,8 +58,12 @@ class GameView(arcade.View):
 
     def on_draw(self):
         self.clear()
+        arcade.draw_texture_rect(self.background, rect=self.background_size)
         self.ship_sprite_list.draw()
         self.control_text.draw()
+
+    
+    
 
     def on_update(self, delta_time: float):
         self.move_ship(delta_time)
@@ -100,6 +107,8 @@ class GameView(arcade.View):
 
     def on_mouse_motion(self, x: int, y: int, dx: int, dy: int):
         self.mouse_pos = (x, y)
+
+
 
 
 # --- RUN GAME ---
