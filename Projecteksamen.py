@@ -12,7 +12,7 @@ SHIP_TURN_SPEED_DEGREES = 130
 NORMAL_FIRE_RATE = 0.5
 FAST_FIRE_RATE = 0.2
 BULLET_SPEED = 20
-STAR_SPAWN_RATE = 1.0  # 1 minut mellem stjerner
+STAR_SPAWN_RATE = 10.0  # 1 minut mellem stjerner
 
 # POWER-UP & NOVA
 NOVA_COOLDOWN = 15.0
@@ -38,7 +38,7 @@ class GameView(arcade.View):
         # Spil Status & Bane-logik
         self.level = 1
         self.stars_collected = 0
-        self.lives = 3
+        self.lives = 5
         self.game_over = False
         self.victory = False
         
