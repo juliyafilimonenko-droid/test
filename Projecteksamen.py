@@ -29,7 +29,6 @@ class GameView(arcade.View):
             self.background = arcade.load_texture("Resorces/c58d078a-856c-4aed-9ff9-0bf536e245f2.jpg")
             self.ship = arcade.Sprite("Resorces/Ship.png", scale=0.05)
         except:
-            # Fallback hvis filer mangler
             self.background = None
             self.ship = arcade.SpriteSolidColor(30, 50, arcade.color.WHITE)
 
